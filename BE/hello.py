@@ -5,7 +5,7 @@ app = Flask(__name__)
 def login():
     if request.method == 'POST':
         # session['username'] = request.form['username']
-        return '200'
+        return '2000'
     return '200'
 
 @app.route('/logout')
