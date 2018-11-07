@@ -2,11 +2,12 @@
   <div class="hello">
     <input v-model='name'>
     <button @click='doLogin'>登陆</button>
+    <button @click='doLogout'>登出</button>
   </div>
 </template>
 
 <script>
-import { login } from '../getData'
+import { login, logout } from '../getData'
 export default {
   name: 'HelloWorld',
   data () {
@@ -19,8 +20,12 @@ export default {
       let params = {
         username: this.name
       }
-      console.log(login)
       login(params,(res)=>{
+        console.log(res)
+      })
+    },
+    doLogout(){
+      logout('',(res)=>{
         console.log(res)
       })
     }

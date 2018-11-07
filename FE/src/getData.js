@@ -25,8 +25,7 @@ const PostRequest = (url, params, callback) => axios({
       console.error('timeout_POST')
     }
     if(str.search('Network Error') !== -1){
-      store.commit('reportMsg', '网络连接失败，请稍后重试')
-      store.commit('showPositionValue',true)
+      console.error('网络连接失败，请稍后重试')
     }
   })
 
@@ -49,8 +48,7 @@ const getRequest = (url, params, callback) => axios.get(apiUrl + url, {
       console.error('timeout_GET')
     }
     if(str.search('Network Error') !== -1){
-      store.commit('reportMsg', '网络连接失败，请稍后重试')
-      store.commit('showPositionValue',true)
+      console.error('网络连接失败，请稍后重试')
     }
   });
 
