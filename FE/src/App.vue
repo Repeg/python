@@ -7,7 +7,13 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  mounted(){
+    function fn(n){
+      let x = parseInt(Number.random()*31)+2
+      let a = []
+    }
+  }
 }
 </script>
 

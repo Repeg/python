@@ -1,9 +1,9 @@
 from flask import Flask, session, redirect, url_for, escape, request
 from flask_cors import CORS
 app = Flask(__name__)
-CORS(app, support_credential=True)
+CORS(app, supports_credentials=True)
 
-@app.route('/login', methods=['POST'])
+@app.route('/api/login', methods=['POST'])
 def login():
     if 'username' in session:
         return session['username']

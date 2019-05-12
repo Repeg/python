@@ -52,7 +52,7 @@ const getRequest = (url, params, callback) => axios.get(apiUrl + url, {
     }
   });
 
-export const login = (params, callback) => PostRequest('/login', params, callback)
+export const login = (params, callback) => PostRequest('/api/login', params, callback)
 export const logout = (params, callback) => PostRequest('/logout', params, callback)
 
 // export const goodsSellAmount = (params, callback) => getRequest('/goods/sellAmount/', params, callback)
