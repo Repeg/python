@@ -3,7 +3,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
 
-@app.route('/api/login', methods=['POST'])
+@app.route('/login', methods=['POST'])
 def login():
     if 'username' in session:
         return session['username']
