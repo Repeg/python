@@ -1,15 +1,18 @@
-from flask import Flask, session, redirect, url_for, escape, request
+from flask import Flask, session, redirect, url_for, escape, request,jsonify
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
 
 @app.route('/login', methods=['POST'])
 def login():
+    userName = ''
     if 'username' in session:
-        return session['username']
+        userName = session['username']
     else:
         session['username'] = request.form['username']
-        return '200'
+        userName = session['username']
+    res = {'success': True,'userName': userName}
+    return jsonify(res)
 
 @app.route('/logout',methods=['POST'])
 def logout():
